@@ -325,18 +325,17 @@ class DogecoinConnection(object):
         """
         return dict(self.proxy.signrawtransaction(hexstring, previous_transactions, private_keys))
 
-     def sendrawtransaction(self, hexstring):
-         """
-         Submits raw transaction (serialized, hex-encoded) to local node and network. 
+    def sendrawtransaction(self, hexstring):
+        """
+        Submits raw transaction (serialized, hex-encoded) to local node and network. 
          
-         Returns a txid
+        Returns a txid
  
-         Arguments:
+        Arguments:
  
-         - *hexstring* -- A hex string of the transaction to be decoded.
-         """
- 
- 	return self.proxy.sendrawtransaction(hexstring)
+        - *hexstring* -- A hex string of the transaction to be decoded.
+        """
+        return self.proxy.sendrawtransaction(hexstring)
  	
     def decoderawtransaction(self, hexstring):
         """
@@ -656,17 +655,3 @@ class DogecoinConnection(object):
         :rtype: unicode
         """
         return self.proxy.signmessage(address, message)
-
-    def verifymessage(self, address, signature, message):
-        """
-        Verify a signed message
-
-        :param address: Dogecoin address used to sign a message
-        :type address: str or unicode
-        :param signature: The signature
-        :type signature: unicode
-        :param message: The message to sign
-        :type message: str or unicode
-        :rtype: bool
-        """
-        return self.proxy.verifymessage(address, signature, message)
