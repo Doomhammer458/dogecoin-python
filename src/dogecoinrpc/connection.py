@@ -333,7 +333,7 @@ class DogecoinConnection(object):
  
         Arguments:
  
-        - *hexstring* -- A hex string of the transaction to be decoded.
+        - *hexstring* -- A hex string of the transaction to be sent.
         """
         return self.proxy.sendrawtransaction(hexstring)
  	
