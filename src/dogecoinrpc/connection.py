@@ -655,3 +655,21 @@ class DogecoinConnection(object):
         :rtype: unicode
         """
         return self.proxy.signmessage(address, message)
+    def createmultisig(self, nrequired, key_list):
+        """
+        creates a new multisig address
+        
+        
+
+        """
+        
+        return dict(self.proxy.createmultisig(nrequired, key_list))
+        
+    def decodescript(self,script):
+        """
+        decodes a raw hex script
+        """
+        
+        
+        return dict(self.proxy.decodescript(script))
+
